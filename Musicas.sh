@@ -38,7 +38,7 @@ main(){
 
 adicionarMusica(){
 	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
-	echo " ▓▓▓▒▒▒░░░ ADICIONAR MÚSICA ░░░▒▒▒▓▓▓"
+	echo " ▓▓▓▒▒▒░░░ ADICIONAR ░░░▒▒▒▓▓▓"
 	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
 	echo " "
 	read -p "Digite o nome da música: " nomeMusica
@@ -46,10 +46,8 @@ adicionarMusica(){
 	read -p "Digite o album da música: " albumMusica
 	read -p "Digite o artista da música: " artistaMusica
 
-	echo "Música: $nomeMusica" >> Musicas.txt
-	echo "Ano da música: $anoMusica" >> Musicas.txt
-	echo "Álbum da música: $albumMusica" >> Musicas.txt
-	echo "Artista da música: $artistaMusica" >> Musicas.txt
+	echo "Música: $nomeMusica, Ano: $anoMusica, Álbum: $albumMusica, Artista: $artistaMusica" >> Musicas.txt
+	#esse "Música: ..." está meio que bugando o search, ou vou ter que tirar ou vou ter que pesquisar uma forma melhor
 	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬" >> Musicas.txt
 }	
 
@@ -58,13 +56,35 @@ removerMusica(){
 }
 
 buscarMusica(){
-	echo "buscado"
+	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
+	echo " ▓▓▓▒▒▒░░░ BUSCAR ░░░▒▒▒▓▓▓"
+	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
+	echo " "
+	read -p "Digite a palavra-chave a ser buscada: " busca
+	
+	if [[ `cat  Musicas.txt | grep -i "$busca"` ]]
+	then
+		echo "`cat  Musicas.txt | grep -i "$busca"`"
+	else 
+		echo "Música não encontrada."
+	fi
+
 }
 
 listarMusica(){
+	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
+	echo " ▓▓▓▒▒▒░░░ LISTAR ░░░▒▒▒▓▓▓"
+	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
+	echo " "
 	cat Musicas.txt
 }
 
 #chamando a função main
-> Musicas.txt
-main
+if [ -e Musicas.txt ]
+then
+	>> Musicas.txt
+	main
+else
+	> Musicas.txt
+	main
+fi
