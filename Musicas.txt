@@ -1,4 +1,50 @@
-Música: a, Ano: a, Álbum: a, Artista: a
-Música: b, Ano: b, Álbum: b, Artista: b
-Música: asudas, Ano: dasdas, Álbum: das, Artista: ada
-Música: a, Ano: a, Álbum: a, Artista: a
+Música: Ameno, Ano: 1996, Álbum: Era, Artista: E.R.A.
+Música: Every Breath You Take, Ano: 1983, Álbum: Synchronicity, Artista: The Police
+Música: Never Tear Us Apart, Ano: 1987, Álbum: Kick, Artista: INXS
+Música: Carry on Wayward Son, Ano: 1976, Álbum: Leftoverture, Artista: Kansas
+Música: Hotel California, Ano: 1976, Álbum: Live at the Summit, Artista: Eagles
+Música: Crazy Train, Ano: 1980, Álbum: Blizzard of Ozz, Artista: Ozzy Osbourne
+Música: Californication, Ano: 1999, Álbum: Californication, Artista: Red Hot Chili Peppers
+Música: The Final Countdown, Ano: 1986, Álbum: The Final Countdown, Artista: Europe
+Música: Stairway to Heaven, Ano: 1971, Álbum: Unknown, Artista: Led Zeppelin
+Música: Don't Stop Me Now, Ano: 1978, Álbum: Jazz, Artista: Queen
+Música: Nothing Else Matters, Ano: 1991, Álbum: Metallica, Artista: Metallica
+Música: Mr. Blue Sky, Ano: 1977, Álbum: Out of the Blue, Artista: Eletric Light Orchestra
+Música: Master Of Puppets, Ano: 1986, Álbum: Master Of Puppets, Artista: Metallica
+Música: Don't Stop Believin', Ano: 1981, Álbum: Escape, Artista: Journey
+Música: Losing My Religion, Ano: 1991, Álbum: Kult Records Presents "Losing My Religion", Artista: R.E.M.
+Música: Sultans of Swing, Ano: 1978, Álbum: Dire Straits, Artista: Dire Straits
+Música: Wind Of Change, Ano: 1990, Álbum: Crazy World, Artista: Scorpions
+Música: Forever Young, Ano: 1984, Álbum: Forever Young (Remaster), Artista: Alphaville
+Música: Sharped Dressed Man, Ano: 1983, Álbum: Eliminator, Artista: ZZ Top
+Música: I Want to Break Free, Ano: 1984, Álbum: The Works, Artista: Queen
+Música: Still Loving You, Ano: 1984, Álbum: Still Loving You - Je t'aime encore, Artista: Scorpions
+Música: No One Knows, Ano: 2002, Álbum: Songs for the Deaf, Artista: Queens of the Stone Age
+Música: Do I Wanna Know?, Ano: 2013, Álbum: AM, Artista: Arctic Monkeys
+Música: Take My Breath Away, Ano: 1986, Álbum: Top Gun, Artista: Berlin
+Música: Sweater Weather, Ano: 2013, Álbum: I Love You, Artista: The Neighbourhood
+Música: Hold The Line, Ano: 1978, Álbum: Toto, Artista: Toto
+Música: Remember When, Ano: 2019, Álbum: Nothing Happens, Artista: Wallows
+Música: Where Are You Now, Ano: 1983, Álbum: Sound Elixir, Artista: Nazareth
+Música: Love Hurts, Ano: 1974, Álbum: Love Hurts, Artista: Nazareth
+Música: Take On Me, Ano: 1985, Álbum: Hunting High and Low, Artista: a-ha
+Música: Volare, Ano: 1989, Álbum: ¡Volaré! The Very Best of the Gipsy Kings, Artista: Gipsy Kings
+Música: Bamboleo, Ano: 1988, Álbum: Gipsy Kings, Artista: José Reyes & Los Reyes
+Música: Seven Nation Army, Ano: 2003, Álbum: Elephant, Artista: The White Stripes
+Música: The Sound Of Silence, Ano: 2015, Álbum: Immortalized, Artista: Disturbed
+Música: Someone Like You, Ano: 2011, Álbum: 21, Artista: Adele
+Música: Livin' On A Prayer, Ano: 1986, Álbum: Slippery When Wet, Artista: Bon Jovi
+Música: November Rain, Ano: 1987, Álbum: Appetite for Destruction, Artista: Guns N' Roses
+Música: Sweet Child O' Mine, Ano: 1987, Álbum: Appetite for Destruction, Artista: Guns N' Roses
+Música: Creep, Ano: 1992, Álbum: Creep, Artista: Radiohead
+Música: Like a Stone, Ano: 2002, Álbum: Audioslave, Artista: Audioslave
+Música: Back In Black, Ano: 1980, Álbum: Back In Black, Artista: AC/DC
+Música: Stayin' Alive, Ano: 1977, Álbum: Saturday Night Fever: The Original Movie Sound Track, Artista: Bee Gees
+Música: Under The Bridge, Ano: 1991, Álbum: Blood Sugar Sex Magik, Artista: Red Hot Chili Peppers
+Música: More Than A Feeling, Ano: 1976, Álbum: Boston, Artista: Boston
+Música: Lover Why, Ano: 1985, Álbum: Ti Ti Ti - Internacional, Artista: Century
+Música: Young Turks, Ano: 1981, Álbum: Tonight I'm Yours, Artista: Rod Stewart
+Música: Eye Of The Tiger, Ano: 1982, Álbum: Eye of the Tiger, Artista: Survivor
+Música: Another One Bites the Dust, Ano: 1980, Álbum: The Game, Artista: Queen
+Música: Hey Jude, Ano: 1968, Álbum: Hey Jude, Artista: The Beatles
+Música: Imagine, Ano: 1970, Álbum: Imagine, Artista: John Lennon

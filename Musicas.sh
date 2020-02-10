@@ -15,22 +15,13 @@ main(){
 		read -p "Digite a opção desejada: " opcaoDesejada
 
 		case "$opcaoDesejada" in
-	   	"1") 
-			adicionarMusica
-	   	;;
-	   	"2") 
-			removerMusica
-	   	;;
-	   	"3") 
-			buscarMusica
-	   	;;
-		"4") 
-			listarMusica
-	   	;;
+	   	"1") adicionarMusica;;
+	   	"2") removerMusica;;
+	   	"3") buscarMusica;;
+		"4") listarMusica;;
 		*)
-			echo "Opção inválida!"
-			exit 1	
-		;;
+		echo "Opção inválida!"
+		exit 1;;
 		esac
 	done
 
@@ -39,17 +30,14 @@ main(){
 adicionarMusica(){
 	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
 	echo " ▓▓▓▒▒▒░░░ ADICIONAR ░░░▒▒▒▓▓▓"
-	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
-	echo " "
+	echo -e "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
 	read -p "Digite o nome da música: " nomeMusica
 	read -p "Digite o ano da música: " anoMusica
 	read -p "Digite o album da música: " albumMusica
 	read -p "Digite o artista da música: " artistaMusica
 
 	echo "Música: $nomeMusica, Ano: $anoMusica, Álbum: $albumMusica, Artista: $artistaMusica" >> Musicas.txt
-	#esse "Música: ..." está meio que bugando o search, ou vou ter que tirar ou vou ter que pesquisar uma forma melhor
-	echo " "
-	echo "Música adicionada com sucesso."
+	echo -e "\nMúsica adicionada com sucesso."
 
 	read -p "Deseja adicionar outra música?[S/N]: " escolha
 	if [[ $escolha =~ ^([yY]|[sS])$ ]]
@@ -57,32 +45,37 @@ adicionarMusica(){
 		adicionarMusica
 	else
 		main
-	fi
-	
+	fi	
 }	
 
 removerMusica(){
-	#está apagando todas as ocorrências, ao invés de apenas a primeira
 	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
 	echo " ▓▓▓▒▒▒░░░ REMOVER ░░░▒▒▒▓▓▓"
-	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
-	echo " "
-	read -p "Digite a palavra-chave a ser buscada: " busca
+	echo -e "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
+	read -p "Digite a palavra-chave a ser removida: " busca
 	
-	if [[ `cat  Musicas.txt | grep -i "$busca"` ]]
+	if [[ `cat Musicas.txt | grep -i "$busca"` ]]
 	then
-		read -p "Deseja realmente remover?[S/N]: " escolhaRemover
-		if [[ $escolhaRemover =~ ^([yY]|[sS])$ ]]
+		read -p "Deseja remover apenas uma ou todas as referências com esse nome?[1/n]: " escolhaRemover
+		if [[ $escolhaRemover -eq 1 ]]
 		then
 			sed -i "/$busca/{H;x;/^\n/d;g;}" Musicas.txt
-			#sed -i "/$busca/d" Musicas.txt
-			echo " "
-			echo "Música removida com sucesso."
-		else
+			echo -e "\Referência removida com sucesso."
+		elif [[ $escolhaRemover = "n" ]]
+        then
+			read -p "Deseja realmente remover? Isso pode ser letal. [S/N]: " escolhaReal
+			if [[ $escolhaReal =~ ^([yY]|[sS])$ ]]
+			then
+            	sed -i "/$busca/d" Musicas.txt
+				echo -e "\nReferência(s) removida(s) com sucesso."
+			else
 			echo "Música não removida."
+			fi
+        else
+            echo "Musica não removida."
 		fi
 	else
-		echo "Música não removida/não encontrada."
+		echo "Música não encontrada."
 	fi
 
 	read -p "Deseja remover outra música?[S/N]: " escolha
@@ -97,17 +90,14 @@ removerMusica(){
 buscarMusica(){
 	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
 	echo " ▓▓▓▒▒▒░░░ BUSCAR ░░░▒▒▒▓▓▓"
-	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
-	echo " "
+	echo -e "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
 	read -p "Digite a palavra-chave a ser buscada: " busca
-	echo " "
 	
-	if [[ `cat  Musicas.txt | grep -i "$busca"` ]]
+	if [[ `cat -e Musicas.txt | grep -i "$busca"` ]]
 	then
 		echo "Itens encontrados:"
 		echo "`cat  Musicas.txt | grep -i "$busca"`"
-		echo " "
-		echo "Busca concluída."
+		echo -e "\nBusca concluída."
 	else 
 		echo "Música não encontrada."
 	fi
@@ -119,20 +109,16 @@ buscarMusica(){
 	else
 		main
 	fi
-
 }
 
 listarMusica(){
 	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
 	echo " ▓▓▓▒▒▒░░░ LISTAR ░░░▒▒▒▓▓▓"
-	echo "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬"
-	echo " "
+	echo -e "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
 	cat -n Musicas.txt
-	echo " "
-	echo "Listagem concluída."
+	echo -e "\nListagem concluída."
 }
 
-#chamando a função main
 if [ -e Musicas.txt ]
 then
 	>> Musicas.txt
