@@ -10,8 +10,7 @@ main(){
 		echo " [2]: Remover uma música existente."
 		echo " [3]: Buscar uma música existente."
 		echo " [4]: Listar todas as músicas existentes."
-		echo " [5]: Aperte [CTRL+C] para fechar o programa."
-		echo " "
+		echo -e " [5]: Aperte [CTRL+C] para fechar o programa.\n"
 		read -p "Digite a opção desejada: " opcaoDesejada
 
 		case "$opcaoDesejada" in
@@ -60,7 +59,7 @@ removerMusica(){
 		if [[ $escolhaRemover -eq 1 ]]
 		then
 			sed -i "/$busca/{H;x;/^\n/d;g;}" Musicas.txt
-			echo -e "\Referência removida com sucesso."
+			echo -e "\nReferência removida com sucesso."
 		elif [[ $escolhaRemover = "n" ]]
         then
 			read -p "Deseja realmente remover? Isso pode ser letal. [S/N]: " escolhaReal
@@ -93,10 +92,10 @@ buscarMusica(){
 	echo -e "▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
 	read -p "Digite a palavra-chave a ser buscada: " busca
 	
-	if [[ `cat -e Musicas.txt | grep -i "$busca"` ]]
+	if [[ `cat Musicas.txt | grep -i "$busca"` ]]
 	then
 		echo "Itens encontrados:"
-		echo "`cat  Musicas.txt | grep -i "$busca"`"
+		echo "`cat -n Musicas.txt | grep -i "$busca"`"
 		echo -e "\nBusca concluída."
 	else 
 		echo "Música não encontrada."
